@@ -1,0 +1,107 @@
+.badge {
+  background-color: var(--violet);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.badge-active {
+  background-color: #4caf50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.badge-none {
+  background-color: #dfd7d6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.badge-inactive {
+  background-color: #f44336;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.badge-none {
+  background-color: #dfd7d6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.table-row-even {
+  background-color: var(--violet-opaque);
+}
+
+.mat-mdc-header-cell, .mat-mdc-footer-cell, .mat-mdc-cell {
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.mat-mdc-header-row, .mat-mdc-footer-row, .mat-mdc-row {
+  min-width: 600px;
+}
+
+.mat-mdc-table-sticky {
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .mat-mdc-table-sticky, .mat-mdc-header-cell.mat-mdc-table-sticky {
+    background-color: white;
+    border-left: 1px solid #e0e0e0;
+  }
+}
+
+::ng-deep .mat-sort-header-content {
+  text-align: left !important;
+}
+
+::ng-deep mat-header-cell, mat-cell {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+mat-row.expanded-detail-row {
+  min-height: unset;
+}
+
+.detail-element-row mat-cell {
+  border-bottom-width: 0;
+}
+
+.detail-content {
+  overflow: hidden;
+
+  .detail-label {
+    color: var(--mat-table-header-headline-color, var(--mat-app-on-surface, rgba(0, 0, 0, 0.87)));
+    font-family: var(--mat-table-header-headline-font, var(--mat-app-title-small-font, Roboto, sans-serif));
+    line-height: var(--mat-table-header-headline-line-height, var(--mat-app-title-small-line-height));
+    font-size: var(--mat-table-header-headline-size, var(--mat-app-title-small-size, 14px));
+    font-weight: var(--mat-table-header-headline-weight, var(--mat-app-title-small-weight, 500));
+  }
+}
+
+.paginator-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.spinner-container {
+  margin-left: 10px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w-25 {
+  width: 10% !important;
+}

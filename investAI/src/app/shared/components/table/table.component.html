@@ -1,0 +1,107 @@
+<section tabindex="0" style="overflow: auto;">
+    <mat-table [dataSource]="dataSource" matSort [multiTemplateDataRows]="true">
+
+        <ng-container matColumnDef="expand-detail" [stickyEnd]="true" *ngIf="actions.length > 0">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button mat-icon-button aria-label="expand row"
+                    (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+                    @if (expandedElement === element) {
+                    <i class="bi bi-chevron-up"></i>
+                    } @else {
+                    <i class="bi bi-chevron-down"></i>
+                    }
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        @for (column of columns; track column) {
+        <ng-container [matColumnDef]="column.attributeName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.title}} </mat-header-cell>
+            <mat-cell *matCellDef="let item">
+                <span [ngClass]="{
+                        'badge-inactive': column.accent && item[column.attributeName] !== undefined && item[column.attributeName] === true,
+                        'badge-active': column.accent && item[column.attributeName] !== undefined && item[column.attributeName] == false,
+                        'badge-none': column.accent && item[column.attributeName] === undefined,
+                        'badge': column.badge
+                    }">
+                    {{ column.pipeArgs != undefined ? transformValue(item[column.attributeName], column.pipeArgs):
+                    item[column.attributeName] }}
+                </span>
+            </mat-cell>
+        </ng-container>
+        }
+
+        <ng-container matColumnDef="actions" [stickyEnd]="true" *ngIf="actions.length > 0">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                @if (actions.length === 1) {
+                    <span (click)="onAction(actions[0], element); $event.stopPropagation()" class="violet pointer">
+                        ELIMINA
+                    </span>
+                }
+                @else if (actions.length > 1) {
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <ng-container *ngFor="let action of actions">
+                            <button mat-menu-item (click)="onAction(action, element); $event.stopPropagation()">
+                                <i class="{{ action.icon ? action.icon : '' }} + violet"></i>&nbsp;{{ action.title | uppercase }}
+                            </button>
+                        </ng-container>
+                    </mat-menu>
+                }
+            </mat-cell>
+        </ng-container>
+        
+
+        <ng-container matColumnDef="expandedDetail">
+            <mat-cell *matCellDef="let item" [attr.colspan]="displayedColumns.length">
+                <div class="detail-content d-flex flex-column justify-content-start align-items-start gap-1 w-100"
+                    [@detailExpand]="item == expandedElement ? 'expanded' : 'collapsed'">
+                    <mat-divider class="w-100"></mat-divider>
+                    @for (column of displayedDetails; track $index; let last = $last) {
+                    <div class="d-flex justify-content-start w-100 px-2" [ngClass]="{ 'pb-2': last }">
+                        <label class="detail-label w-25">{{ column.title}}&nbsp;</label>
+                        <span class="w-75"
+                            [innerHTML]="column.pipeArgs != undefined ? transformValue(item[column.attributeName], column.pipeArgs): item[column.attributeName]"></span>
+                    </div>
+                    }
+                </div>
+            </mat-cell>
+        </ng-container>
+
+        <!--<ng-container matColumnDef="secondary">
+            <mat-cell [attr.colspan]="displayedColumns.length" *matCellDef="let element">
+              Secondary row for the 
+            </mat-cell>
+        </ng-container>-->
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        @if (displayedDetails.length > 0) {
+        <mat-row *matRowDef="let element; columns: displayedColumns;" class="detail-element-row"
+            [class.example-expanded-row]="expandedElement === element">
+        </mat-row>
+        <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="expanded-detail-row"></mat-row>
+        }
+        @else {
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        }
+        <!--<tr mat-row *matRowDef="let row; columns: ['secondary'];"></tr>-->
+
+    </mat-table>
+</section>
+
+<div class="paginator-container">
+    <div *ngIf="loading">
+        <div class="spinner-border spinner-container" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <mat-paginator [pageSize]="size" [pageSizeOptions]="[5, 20, 50, 100, 150]" [length]="totalElements"
+        (page)="emitPageChange($event)" showFirstLastButtons class="mt-2">
+    </mat-paginator>
+</div>
+
+    

@@ -1,0 +1,60 @@
+<div class="menu w-100 pt-3">
+    <div class="d-flex flex-column align-items-center mb-3 lg-content">
+        <div class="d-flex justify-content-center align-items-end" style="color: var(--orange);">
+            <i class="bi bi-person me-2" style="color: var(--orange);"></i>
+        </div>
+    </div>
+
+    <mat-nav-list>
+        <ng-container *ngFor="let menuItem of menuItems; let index = index">
+            <ng-container
+                [ngTemplateOutlet]="menuItem?.subMenu ? nestedMenu : menuLink"
+                [ngTemplateOutletContext]="{ menuItem: menuItem, index: index }"
+            ></ng-container>
+        </ng-container>
+      </mat-nav-list>
+</div>
+
+<ng-template #nestedMenu let-menuItem="menuItem" let-index="index">
+    <mat-expansion-panel
+        class="mat-elevation-z0"
+        [expanded]="expandedPanel === index"
+    >
+        <mat-expansion-panel-header class="nav-head">
+            <mat-panel-title>
+                <i *ngIf="menuItem.icon" class="{{ menuItem.icon }} nav-list-icon me-2 fs-5"></i>
+                <span class="mat-list-text">
+                    <span matLine style="color: white; font-size: large;">
+                        {{ menuItem.title }}
+                    </span>
+                </span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+    
+        <div class="nav-section">
+            <ng-container *ngFor="let child of menuItem.subMenu">
+                <ng-container
+                    [ngTemplateOutlet]="child.subMenu ? nestedMenu : menuLink"
+                    [ngTemplateOutletContext]="{ menuItem: child }"
+                ></ng-container>
+            </ng-container>
+        </div>
+    </mat-expansion-panel>
+</ng-template>
+  
+<ng-template #menuLink let-menuItem="menuItem">
+    <a
+        (click)="onNavigate(menuItem.link)"
+        routerLinkActive="list-item-active"
+        mat-list-item
+        matLine
+        class="hover-varation"
+    >
+        <i *ngIf="menuItem.icon; else defaultIcon" class="{{ menuItem.icon }} nav-list-icon me-2 fs-4"></i>
+        <span matLine style="color: white; font-size: large;">{{ menuItem.title}}</span>
+    </a>
+</ng-template>
+
+<ng-template #defaultIcon>
+    <i class="bi bi-dot nav-list-icon me-2 fs-4"></i>
+</ng-template>

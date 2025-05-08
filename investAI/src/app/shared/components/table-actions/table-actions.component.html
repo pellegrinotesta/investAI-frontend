@@ -1,0 +1,13 @@
+<div class="export-actions">
+  <ng-container *ngIf="isEtsi">
+    <button *hasRole="etsiCredentialsPermission" mat-icon-button matTooltip="Credentials Management">
+      <i class="bi bi-person-gear violet"></i>
+    </button>
+  </ng-container>    
+  <button mat-icon-button (click)="export.emit('csv')" matTooltip="Esporta in CSV">
+    <i class="bi bi-filetype-csv violet"></i>
+  </button>
+  <button mat-icon-button (click)="export.emit('excel')" matTooltip="Esporta in Excel">
+    <i class="bi bi-file-earmark-excel violet"></i>
+  </button>
+</div>

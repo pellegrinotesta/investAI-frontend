@@ -1,0 +1,28 @@
+.menu {
+    background-color: var(--violet);
+    color: white;
+    height: 100%;
+    border-radius: 0px;
+    border: 0px;
+    font-size: large;
+}
+
+a {
+    padding: 0 24px;
+    cursor: pointer !important;
+}
+
+a.hover-varation {
+
+  &:hover {
+    i, span {
+      color: var(--orange) !important;
+    }
+  }
+}
+.mat-expansion-panel-header {
+  height: 48px !important;
+  letter-spacing: unset !important;
+  line-height: unset !important;
+  font-weight: unset !important;
+}

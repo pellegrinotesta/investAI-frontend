@@ -1,0 +1,27 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  //background: radial-gradient(circle, white, rgba(255, 255, 255, 0.6117647059), rgba(255, 255, 255, 0.349), transparent);
+}
+  
+.loader-logo {
+  width: 140px;
+  height: auto;
+  animation: bounce 0.8s infinite;
+  transform-origin: bottom;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-35px) scaleY(1);
+  }
+  50% {
+    transform: translateY(0px) scaleY(0.8);
+  }
+  100% {
+    transform: translateY(-35px) scaleY(1);
+  }
+}
+  

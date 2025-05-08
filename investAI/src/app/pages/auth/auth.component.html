@@ -1,0 +1,39 @@
+<div class="p-5">
+    <mat-card class="login-card container">
+        <div>
+            <img src="/assets/images/logo.svg" alt="Logo Argo Sisvel">
+            <h2 class="login-title">{{'AUTH.TITLE'}}</h2>
+        </div>
+        
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>{{'AUTH.FORM.USERNAME'}}</mat-label>
+                <input matInput formControlName="username" type="text" />
+                @if(loginForm.get('username')?.hasError('username') && !loginForm.get('username')?.hasError('required')) {
+                    <mat-error>
+                        {{ 'AUTH.FORM.ERRORS.EMAIL'}}
+                    </mat-error>
+                }
+                @else if(loginForm.get('username')?.hasError('required')) {
+                        <mat-error>
+                        {{ 'AUTH.FORM.ERRORS.REQUIRED'}}
+                    </mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>{{'AUTH.FORM.PASSWORD'}}</mat-label>
+                <input matInput formControlName="password" type="password" />
+                @if(loginForm.get('password')?.hasError('required')) {
+                    <mat-error>
+                        {{ 'AUTH.FORM.ERRORS.REQUIRED'}}
+                    </mat-error>
+                }
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" class="full-width"> 
+                {{'AUTH.BUTTON'}}
+            </button>
+        </form>
+    </mat-card>
+</div>
