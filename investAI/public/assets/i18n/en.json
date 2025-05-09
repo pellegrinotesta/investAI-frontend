@@ -1,0 +1,209 @@
+{
+  "APP_TITLE": "Argo",
+  "MENU_HEADER": {
+    "PROFILE": "Profile",
+    "LOGOUT": "Logout"
+  },
+  "MENU": {
+    "SIDENAV": {
+      "APP": "Argo Mag Application",
+      "USERS": "User Management",
+      "PATENTS": "Patents",
+      "SEP_PATENTS": "ETSI SEP Database",
+      "DOCUMENTATION": "Documentation",
+      "ETSI_TECHNOLOGY": "ETSI and 3GPP Insights",
+      "MPEG": "MPEG Insights",
+      "DVB": "DVB Insights",
+      "NEWSLETTER": {
+        "TITLE": "Newsletter Insights",
+        "ROADMAPS": "SDOs Roadmaps",
+        "REPORTS": "SDOs Meeting Reports"
+      },
+      "MAGAZINE": "Magazine"
+    }
+  },
+  "MESSAGES": {
+    "SUCCESS": {
+      "TITLE": "Ok",
+      "DESCRIPTION": "Operation succeeded."
+    },
+    "ERROR": {
+      "TITLE": "Error",
+      "DESCRIPTION": "Operation failed."
+    },
+    "NOT_ALLOWED": {
+      "TITLE": "Access Denied",
+      "DESCRIPTION": "You are not allowed to perform this action."
+    },
+    "CONFIRM": "Are you sure to confirm?",
+    "CONFIRM_RESET": "Are you sure to reset password?",
+    "NO_RECORDS": "No records found."
+  },
+  "USERS": {
+    "TITLE": "User Management",
+    "SEARCH": "Search",
+    "NEW_USER": {
+      "TITLE": "New User"
+    },
+    "EDIT_USER": {
+      "TITLE": "Edit User"
+    },
+    "FIELDS": {
+      "NAME": "Name",
+      "SURNAME": "Surname",
+      "EMAIL": "E-mail",
+      "ROLES": "Roles",
+      "GENDER": "Gender",
+      "STATUS": "Status",
+      "PASSWORD": "Password"
+    }
+  },
+  "PROFILE": {
+    "TITLE": "Profile",
+    "SUBTITLE": "User Details",
+    "FIELDS": {
+      "NAME": "Name",
+      "SURNAME": "Surname",
+      "EMAIL": "E-mail",
+      "ROLES": "Roles",
+      "PASSWORD": "Password",
+      "NEW_PASSWORD": "New Password",
+      "CURRENT_PASSWORD": "Current Password",
+      "CONFIRM_PASSWORD": "Confirm Password"
+    },
+    "MESSAGES": {
+      "FIELD_REQUIRED": "Fiels is required.",
+      "PASSWORD_REQUIRED": "Password is required.",
+      "NEW_PASSWORD_REQUIRED": "New Password is required.",
+      "PASSWORD_MISMATCH": "Passwords must match."
+    }
+  },
+  "PATENTS": {
+    "TITLE": "Patents Management",
+    "SEP": {
+      "SUBTITLE": "ETSI IPR Declaration",
+      "STATUS": {
+        "ACTIVE": "Active",
+        "EXPIRED": "Expired",
+        "UNDEFINED": "Undefined"
+      },
+      "DETAILS": "Patent details",
+      "EDIT": "Edit Patent",
+      "FIELDS": {
+        "PAT_NUMBER": "Application Number",
+        "IRPD_REF": "IRPD Reference",
+        "COMPANY": "Company",
+        "DPG_ATF_IFD": "ETSI Family ID",
+        "EXP_DATE": "Expected Exp. Date",
+        "EXPIRED": "Status",
+        "GEO_COVERAGE": "Geographical coverage",
+        "PUB_NUMBERS": "Publication numbers",
+        "TECHNOLOGY": "Technology",
+        "STANDARDS": "Standards",
+        "ETSI_FAMILY": "ETSI Family",
+        "INPADOC_FAMILY": "INPADOC Family",
+        "STANDARD": "Standard",
+        "COUNTRY": "Country"
+      }
+    },
+    "ETSI": {
+      "SUBTITLE": "ETSI Technologies",
+      "DETAILS": "Detail ETSI Technologies",
+      "FIELDS": {
+        "NAME": "Name",
+        "DESCRIPTION": "Roles and Activities",
+        "COMMITTEE": "Committees",
+        "CONTRIBUTING_COMPANY": "Contributing companies",
+        "NOT_CONTRIBUTING_COMPANY": "No Contributing companies",
+        "DELEGATES_COMPANY": "Delegate companies",
+        "PARTICIPATING_COMPANY": "Participating companies",
+        "TECHNICAL_SPECIFICATION": "Technical specifications",
+        "CREDENTIALS": "Credentials",
+        "RELATED_TECHNOLOGIES": "Related Technologies",
+        "COMMITTEE_DETAILS": "Committee Details"
+      },
+      "TECH_SPEC_TABLE": {
+        "TITLE": "Specification Title",
+        "PUBLICATION": "Publication",
+        "VERSION": "Specification Version",
+        "TECHNOLOGIES": "Technologies"
+      },
+      "MESSAGES": {
+        "NO_RECORDS": "No technologies available."
+      }
+    },
+    "ADD_DIALOG": {
+      "TECHNOLOGY": {
+        "TITLE": "Add Tecnology",
+        "FIELD": "Name"
+      },
+      "STANDARD": {
+        "TITLE": "Add Standard",
+        "FIELD": "Name"
+      },
+      "INPADOC": {
+        "TITLE": "Add INPADOC Family",
+        "FIELD": "Name"
+      },
+      "ETSI": {
+        "TITLE": "Add ETSI Family",
+        "FIELD": "Name"
+      },
+      "PUB_NUM": {
+        "TITLE": "Add Publication Number",
+        "FIELD": "Number"
+      },
+      "GEO_COV": {
+        "TITLE": "Add Geographical Coverage",
+        "FIELD": "Coverage"
+      }
+    }
+  },
+  "AUTH": {
+    "TITLE": "Welcome to Argo",
+    "FORM": {
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "TOKEN_NUMBER": "Token number",
+      "ERRORS": {
+        "REQUIRED": "Input is mandatory",
+        "EMAIL": "Email is not valid"
+      }
+    },
+    "BUTTON": "LOGIN"
+  },
+  "BUTTONS": {
+    "EDIT": "Edit",
+    "VIEW": "View",
+    "DETAIL": "Detail",
+    "SAVE": "Save",
+    "RESET": "Reset",
+    "CANCEL": "Cancel",
+    "CLOSE": "Close",
+    "DELETE": "Delete",
+    "APPLY": "Apply",
+    "BACK": "Back",
+    "RESET_PW": "Reset password",
+    "EXPORT_CSV": "Export CSV File",
+    "EXPORT_XLSX": "Export XLSX File"
+  },
+  "FILTERS": {
+    "TITLE": "Filter"
+  },
+  "DOCUMENTATION": {
+    "TITLE": "Documentation",
+    "USER_GUIDES": "User Guides",
+    "ARCHITECTURE": {
+      "TITLE": "Software Architecture",
+      "WEB_APP": "Web App",
+      "CORE_APP": "Core App"
+    },
+    "DATABASE": "Database",
+    "REST_API": "Rest API",
+    "CODE_DOCUMENTATION": {
+      "TITLE": "Code Documentaion",
+      "WEB_APP": "Web App",
+      "CORE_APP": "Core App"
+    }
+  }
+}

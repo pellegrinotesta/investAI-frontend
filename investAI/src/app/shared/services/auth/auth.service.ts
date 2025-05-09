@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { LogicalOperator } from '../../base/authentication/types/logical-operator.type';
 import { BaseAuthService } from '../../base/authentication/services/base-auth.service';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
 import { Memoize } from 'typescript-memoize';
 import { BaseUser } from '../../base/authentication/models/base-user.model';
 import { AuthenticatedUser } from '../../models/authenticated-user.model';
 import { Subject } from 'rxjs';
 import * as CryptoJS from 'crypto-js';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

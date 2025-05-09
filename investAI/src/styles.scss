@@ -1,4 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+@use './app/styles/palette.scss';
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    //background-image: url("https://www.sisvel.com/images/monogram-outline-primary.svg");
+    //https://www.sisvel.com/images/monogram-outline-sottile.svg
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width: 758px) {
+    .lg-content {
+        display: none !important;
+    }
+}
+
+mat-card.page {
+    background-color: var(--mat-card-background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border-bottom: 3px solid var(--violet);
+    width: 100%;
+}
+
+.mat-mdc-menu-panel {
+    border-bottom: 3px solid var(--violet);
+}
+
+/*mat-card-title {
+    text-transform: uppercase;
+}*/
+
+mat-table {
+    background-color: transparent !important;
+}
+
+mat-paginator {
+    background-color: transparent !important;
+}
+
+mat-expansion-panel {
+    background-color: transparent !important;
+}
+
+mat-expansion-panel-header:hover {
+    background-color: transparent!important;
+    font-size: large;
+    transition: all 0.3s;
+}
+
+i.violet, span.violet {
+    color: var(--violet);
+}
+
+i.orange {
+    color: var(--orange);
+}
+
+.menu i {
+    color: white;
+}
+
+.export-actions {
+    position: absolute;
+    right: 20px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.no-records {
+    color: #00000060;
+}
+
+.button-back {
+    margin-bottom: 0.5rem;
+}

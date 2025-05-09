@@ -1,11 +1,11 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { interval, first } from "rxjs";
-import { environment } from "src/environments/environment";
 import { AuthenticatedUser } from "../../models/authenticated-user.model";
 import { AuthService } from "./auth.service";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import * as moment from 'moment';
+import moment from 'moment';
+import { environment } from "../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'

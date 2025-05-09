@@ -6,8 +6,8 @@ import { finalize, takeUntil } from 'rxjs';
 import { BasePageComponent } from '../../shared/base/base-page/base-page.component';
 import { AuthenticatedUser } from '../../shared/models/authenticated-user.model';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/services/auth/auth.service';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-auth',

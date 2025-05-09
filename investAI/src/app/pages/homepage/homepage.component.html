@@ -1,0 +1,42 @@
+<mat-drawer-container class="container-sisvel w-100" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <app-menu (toggleSidenav)="drawer.toggle()"></app-menu>
+    </mat-drawer>
+
+    <div class="sidenav-content w-100">
+        <div class="header w-100 p-3 d-flex flex-nowrap justify-content-between align-items-center position-fixed w-100">
+            <button type="button" mat-icon-button (click)="drawer.toggle()">
+                <i class="bi bi-list violet"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvas">
+                </i>
+            </button>
+            <div class="pointer logo mt-3" routerLink="/"></div>
+            <div class="d-flex flex-nowrap justify-content-between align-items-center gap-3">
+                <!--<mat-form-field class="lang-select mt-3" style="width: 100px;">
+                    <mat-select disableRipple [(ngModel)]="langSelected">
+                        @for (lang of langs; track lang) {
+                            <mat-option [value]="lang" (click)="chooseLang(lang)">
+                                {{ lang | uppercase }}
+                            </mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>-->
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <i class="bi bi-person-circle violet"></i>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/profile">
+                        <i class="bi bi-person-lines-fill fs-5 violet"></i>&nbsp;
+                        Profilo</button>
+                    <button mat-menu-item (click)="onLogout()">
+                        <i class="bi bi-box-arrow-right fs-5"></i>&nbsp;
+                        Logout</button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="container my-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</mat-drawer-container>
