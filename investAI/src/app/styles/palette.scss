@@ -1,29 +1,28 @@
 :root {
-    --orange: #f7953a;
-    --orange-opaque: #f7953a3a;
-    --violet: #293377;
-    --violet-opaque: #2933772a;
-    --mat-menu-container-color: white;
-    --mdc-filled-text-field-container-color: white;
-    --mat-select-panel-background-color: white;
-    --mdc-text-button-label-text-color: #293377;
-    --mat-select-enabled-arrow-color: #293377;
-    --mat-select-focused-arrow-color: #293377;
-    --mat-card-background-color: rgba(255, 255, 255, 0.95);
-    --mdc-protected-button-label-text-color: white;
-    --mdc-protected-button-container-color: #293377;
-    --mdc-filled-button-container-color: #293377;
-    --mdc-filled-text-field-focus-label-text-color: #293377;
-    --mdc-filled-text-field-focus-active-indicator-color: #293377;
-    --mat-expansion-header-indicator-color: #f7953a;
+  /* Colori principali */
+  --indigo: #3F51B5;
+  --violet: #293377;
+  --violet-opaque: #2933772a;
 
-    /*--mdc-text-button-label-text-color: #293377;
-    --mdc-protected-button-label-text-color: #293377;
-    --mdc-filled-button-container-color: #293377;
-    --mdc-outlined-button-label-text-color: #293377;
-    --mat-text-button-state-layer-color: #293377;
-    --mat-protected-button-state-layer-color: #293377;
-    --mat-outlined-button-state-layer-color: #293377;
-    --mdc-icon-button-icon-color: #293377;
-    --mat-icon-button-state-layer-color: #293377;*/
-  }
+  /* Colore arancione opaco */
+  --o: #f7953a3a;
+
+  /* Background e container */
+  --mat-menu-container-color: white;
+  --mdc-filled-text-field-container-color: white;
+  --mat-select-panel-background-color: white;
+  --mat-card-background-color: rgba(255, 255, 255, 0.95);
+
+  /* Colori testo e indicatori */
+  --mdc-text-button-label-text-color: var(--violet);
+  --mat-select-enabled-arrow-color: var(--violet);
+  --mat-select-focused-arrow-color: var(--violet);
+  --mdc-filled-text-field-focus-label-text-color: var(--violet);
+  --mdc-filled-text-field-focus-active-indicator-color: var(--violet);
+  --mat-expansion-header-indicator-color: #f7953a;
+
+  /* Bottoni */
+  --mdc-protected-button-label-text-color: white;
+  --mdc-protected-button-container-color: var(--violet);
+  --mdc-filled-button-container-color: var(--violet);
+}

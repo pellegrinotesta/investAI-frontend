@@ -24,7 +24,7 @@ export const routes: Routes = [
         path: RoutesEnum.PROFILE,
         canActivate: [roleGuard],
         data: {
-          roles: ['ADMIN'],  // <-- questa è la chiave che il guard si aspetta
+          roles: ['CLIENTE', 'ADMIN'],  // <-- questa è la chiave che il guard si aspetta
           logicalOperator: 'OR'  // opzionale, default è 'OR'
         },
         loadComponent: () => import('./pages/profile/profile.component').then(m => m.ProfileComponent)
