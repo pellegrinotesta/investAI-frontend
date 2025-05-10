@@ -29,16 +29,15 @@
                 }
             </mat-form-field>
 
-            <div class="register-link text-center mt-2">
-                <span>{{ 'AUTH.NO_ACCOUNT' | translate }}</span>
-                <a routerLink="/register" class="ml-2">{{
-                    'AUTH.REGISTER_HERE' | translate
-                    }}</a>
-            </div>
-
             <button mat-raised-button color="primary" type="submit" class="full-width mt-2">
                 {{ 'AUTH.BUTTON' | translate }}
             </button>
         </form>
+
+        <div class="register-link text-center mt-2">
+            <span>{{ 'AUTH.NO_ACCOUNT' | translate }}</span>
+            <a routerLink="/register">{{ 'AUTH.REGISTER_HERE' | translate }}</a>
+        </div>
+
     </mat-card>
 </div>

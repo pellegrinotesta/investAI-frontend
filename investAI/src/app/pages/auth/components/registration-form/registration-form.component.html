@@ -1,32 +1,79 @@
-<div class="p-5">
-    <mat-card class="login-card container">
-      <h2>{{ 'AUTH.REGISTER_TITLE' | translate }}</h2>
-  
-      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>{{ 'AUTH.FORM.USERNAME' | translate }}</mat-label>
-          <input matInput formControlName="username" />
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>{{ 'AUTH.FORM.EMAIL' | translate }}</mat-label>
-          <input matInput formControlName="email" />
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>{{ 'AUTH.FORM.PASSWORD' | translate }}</mat-label>
-          <input matInput type="password" formControlName="password" />
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>{{ 'AUTH.FORM.CONFIRM_PASSWORD' | translate }}</mat-label>
-          <input matInput type="password" formControlName="confirmPassword" />
-        </mat-form-field>
-  
-        <button mat-raised-button color="primary" type="submit" class="full-width">
-          {{ 'AUTH.REGISTER_BUTTON' | translate }}
-        </button>
-      </form>
-    </mat-card>
-  </div>
-  
+<mat-card class="register-card">
+  <h2 class="register-title">Registrazione</h2>
+
+  <!-- Card per Email e Password -->
+  <mat-card class="email-password-card">
+    <h3 class="section-title">Email e Password</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+
+      <div class="row">
+        <div class="col-6 col-md-4">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" />
+          </mat-form-field>
+        </div>
+        <div class="col-6 col-md-4">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" />
+          </mat-form-field>
+        </div>
+        <div class="col-6 col-md-4">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Conferma Password</mat-label>
+            <input matInput formControlName="confirmPassword" type="password" />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+
+  <!-- Card per informazioni anagrafiche -->
+  <mat-card class="personal-info-card">
+    <h3 class="section-title">Informazioni Anagrafiche</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+      <div class="row">
+        <div class="col-6 col-md-4">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Data di nascita</mat-label>
+            <input matInput formControlName="dataNascita" type="date" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Cognome</mat-label>
+            <input matInput formControlName="surname" />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Codice Fiscale</mat-label>
+            <input matInput formControlName="codiceFiscale" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Telefono</mat-label>
+            <input matInput formControlName="telefono" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Indirizzo</mat-label>
+            <input matInput formControlName="indirizzo" />
+          </mat-form-field>
+        </div>
+      </div>
+
+    
+      <button mat-raised-button color="accent" type="submit">
+        Registrati
+      </button>
+    </form>
+  </mat-card>
+</mat-card>

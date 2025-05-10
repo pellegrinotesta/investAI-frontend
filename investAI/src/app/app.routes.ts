@@ -12,7 +12,8 @@ export const routes: Routes = [
   },
   {
     path: RoutesEnum.AUTH,
-    loadComponent: () => import('./pages/auth/auth.component').then(m => m.AuthComponent)
+    loadComponent: () => import('./pages/auth/auth.component').then(m => m.AuthComponent),
+    
   },
   {
     path: RoutesEnum.REGISTER,
@@ -38,7 +39,7 @@ export const routes: Routes = [
       }
     ]
   }
-  
+
 ];
 
 @NgModule({

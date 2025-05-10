@@ -5,9 +5,10 @@ import { LoginService } from './services/login.service';
 import { finalize, takeUntil } from 'rxjs';
 import { BasePageComponent } from '../../shared/base/base-page/base-page.component';
 import { AuthenticatedUser } from '../../shared/models/authenticated-user.model';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../shared/services/auth/auth.service';
+import { RoutesEnum } from '../../shared/enums/routes.enum';
 
 @Component({
   selector: 'app-auth',
@@ -15,13 +16,15 @@ import { AuthService } from '../../shared/services/auth/auth.service';
   imports: [
     SharedModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule, 
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent extends BasePageComponent implements OnInit {
   loginForm: FormGroup;
+  RoutesEnum = RoutesEnum;
 
   constructor( injector: Injector, 
     private readonly router: Router,

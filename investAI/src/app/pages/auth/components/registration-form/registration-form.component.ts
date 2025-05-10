@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatFormField } from '@angular/material/form-field';
 import { SharedModule } from '../../../../shared/shared.module';
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-form',
@@ -14,34 +15,36 @@ import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validatio
 })
 export class RegistrationFormComponent {
 
-  registerForm = new FormGroup({
-    username: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', Validators.required),
-    confirmPassword: new FormControl('', Validators.required)
-  }, { validators: this.passwordMatchValidator });
-  fb: any;
-  authService: any;
-  router: any;
-  
-  passwordMatchValidator(form: AbstractControl): ValidationErrors | null {
-    const password = form.get('password')?.value;
-    const confirmPassword = form.get('confirmPassword')?.value;
-    return password === confirmPassword ? null : { mismatch: true };
+  registerForm!: FormGroup;
+
+  constructor(private fb: FormBuilder, private router: Router) {
+
+
+    this.registerForm = this.fb.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
+      codiceFiscale: ['', Validators.required],
+      dataNascita: ['', Validators.required],
+      telefono: [''],
+      indirizzo: ['']
+    });
   }
-  
-  onRegister() {
-    if (this.registerForm.valid) {
-      this.authService.register(this.registerForm.value).subscribe({
-        next: () => {
-          this.router.navigate(['/login']);
-        },
-        error: (err: any) => {
-          console.error('Registration failed', err);
-        }
-      });
+
+  onSubmit() {
+    if (this.registerForm.valid && this.passwordsMatch()) {
+      const formData = this.registerForm.value;
+      // chiamata HTTP al backend qui
+      console.log('Registering user:', formData);
+      // this.router.navigate(['/login']);
     }
   }
-  
+
+  passwordsMatch(): boolean {
+    return this.registerForm.get('password')?.value === this.registerForm.get('confirmPassword')?.value;
+  }
+
 
 }
