@@ -6,7 +6,9 @@ import { MenuItem } from "../../models/menu-item.model";
 import { SharedModule } from "../../shared.module";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
-import { ProfileType } from "../../models/profile.model";
+import { AuthFacadeService } from "../../services/auth/auth-facade.service";
+import { take } from "rxjs";
+import { AuthenticatedUser } from "../../models/authenticated-user.model";
 
 @Component({
     selector: 'app-menu',
@@ -23,12 +25,22 @@ import { ProfileType } from "../../models/profile.model";
 export class MenuComponent {
 
   readonly router = inject(Router);
+  readonly authFacadeService = inject(AuthFacadeService);
 
-  currentUser!: ProfileType | null;
+  currentUser: AuthenticatedUser | undefined;
   showSetting: boolean = false;
   toggleSidenav = output<void>();
   menuItems: MenuItem[] = MENU_ITEMS;
   expandedPanel = 0;
+
+  ngOnInit(): void {
+    this.authFacadeService
+    .getUser()
+    .pipe(take(1))
+    .subscribe((user) => {
+      this.currentUser = user;
+    });
+  }
 
   onNavigate(route: string): void {
     this.toggleSidenav.emit();

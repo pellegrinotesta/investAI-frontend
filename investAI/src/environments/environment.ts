@@ -7,10 +7,6 @@ export const apiUrl = 'http://localhost:8080';
 export const environment = {
   production: false,
   endpoints: {
-    frame: `${apiUrl}/frames/`,
-    calculator: `${apiUrl}/calculate`,
-    passepartout: `${apiUrl}/passepartout/`,
-    settings: `${apiUrl}/settings/`,
     auth: `${apiUrl}/authentication`,
     password: `${apiUrl}/password/`,
     roles: `${apiUrl}/roles/`,
