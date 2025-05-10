@@ -14,7 +14,10 @@ export const routes: Routes = [
     path: RoutesEnum.AUTH,
     loadComponent: () => import('./pages/auth/auth.component').then(m => m.AuthComponent)
   },
-  
+  {
+    path: RoutesEnum.REGISTER,
+    loadComponent: () => import('./pages/auth/components/registration-form/registration-form.component').then(m => m.RegistrationFormComponent)
+  },
   {
     path: '',
     canActivate: [authGuard],

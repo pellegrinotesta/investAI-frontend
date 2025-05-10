@@ -1,16 +1,70 @@
-<div class="profile-card" >
-    <div class="profile-header">
-      <img class="profile-image" src="assets/images/men_avatar.png" alt="Foto profilo" />
-      <div>
-        <h2>Mario Rossi</h2>
-        <p class="email">
-          <span class="material-icons">email</span>
-          mario.rossi
-        </p>
+<div class="container py-4">
+  <div class="row g-4">
+    <!-- Profile Card -->
+    <div class="col-12 col-lg-4">
+      <div class="card shadow-sm rounded-4 p-3 text-center">
+        <img src="assets/images/men_avatar.png" alt="Avatar" class="rounded-circle mb-3" width="100" />
+        <h4>Mario Rossi</h4>
+        <p class="text-muted"></p>
+        <span class="badge bg-success">Verificato</span>
+        <hr />
+        <button class="btn btn-outline-primary w-100 mt-2">Modifica profilo</button>
+        <button class="btn btn-outline-secondary w-100 mt-2">Cambia password</button>
       </div>
-     <!-- <span class="status-badge" [ngClass]="user.status === 'Enabled' ? 'enabled' : 'disabled'">
-        {{ user.status }}
-      </span> -->
+    </div>
+
+    <!-- Details -->
+    <div class="col-12 col-lg-8">
+      <div class="card shadow-sm rounded-4 p-4">
+        <h5 class="mb-3">Dati personali</h5>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="form-label">Data di nascita</label>
+            <div class="form-control-plaintext">10/05/1985</div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Telefono</label>
+            <div class="form-control-plaintext">+39 345 123 4567</div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Codice fiscale</label>
+            <div class="form-control-plaintext">RSSMRA85T10A562S</div>
+          </div>
+        </div>
+
+        <h5 class="mt-4 mb-3">Informazioni finanziarie</h5>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Conto bancario</label>
+            <div class="form-control-plaintext">IT60X0542811101000000123456</div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Saldo totale</label>
+            <div class="form-control-plaintext text-success fw-bold">€12.430,75</div>
+          </div>
+        </div>
+
+        <h5 class="mt-4 mb-3">Attività recente</h5>
+        <ul class="list-group mb-3">
+          <li class="list-group-item">Login da Chrome (IP: 192.168.1.45) - 2 ore fa</li>
+          <li class="list-group-item">Acquisto ETF S&P500 - €3.000</li>
+          <li class="list-group-item">Modifica dati fiscali</li>
+        </ul>
+
+        <h5 class="mt-4 mb-3">Sicurezza</h5>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Autenticazione 2FA</label>
+            <div class="form-control-plaintext text-success">Attiva</div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Sessioni attive</label>
+            <div class="form-control-plaintext">3 dispositivi</div>
+          </div>
+        </div>
+
+        <button class="btn btn-outline-danger w-100 mt-3">Esporta dati / Chiudi account</button>
+      </div>
     </div>
   </div>
-  
+</div>

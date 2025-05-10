@@ -6,20 +6,6 @@
   },
   "MENU": {
     "SIDENAV": {
-      "APP": "Argo Mag Application",
-      "USERS": "User Management",
-      "PATENTS": "Patents",
-      "SEP_PATENTS": "ETSI SEP Database",
-      "DOCUMENTATION": "Documentation",
-      "ETSI_TECHNOLOGY": "ETSI and 3GPP Insights",
-      "MPEG": "MPEG Insights",
-      "DVB": "DVB Insights",
-      "NEWSLETTER": {
-        "TITLE": "Newsletter Insights",
-        "ROADMAPS": "SDOs Roadmaps",
-        "REPORTS": "SDOs Meeting Reports"
-      },
-      "MAGAZINE": "Magazine"
     }
   },
   "MESSAGES": {
@@ -78,86 +64,10 @@
       "PASSWORD_MISMATCH": "Le passwords devonon essere uguali."
     }
   },
-  "PATENTS": {
-    "TITLE": "Gestione brevetti",
-    "SEP": {
-      "SUBTITLE": "ETSI IPR Declaration",
-      "STATUS": {
-        "ACTIVE": "Attivo",
-        "EXPIRED": "Scaduto",
-        "UNDEFINED": "Sconosciuto"
-      },
-      "DETAILS": "Dettaglio brevetto",
-      "EDIT": "Modifica brevetto",
-      "FIELDS": {
-        "PAT_NUMBER": "App. Number",
-        "IRPD_REF": "Riferimento IRPD",
-        "COMPANY": "Azienda",
-        "DPG_ATF_IFD": "ETSI Family ID",
-        "EXP_DATE": "Scadenza prevista",
-        "EXPIRED": "Stato",
-        "GEO_COVERAGE": "Copertura geografica",
-        "PUB_NUMBERS": "Numero di pubblicazione",
-        "TECHNOLOGY": "Tecnologia",
-        "STANDARDS": "Standards",
-        "ETSI_FAMILY": "Famiglia ETSI",
-        "INPADOC_FAMILY": "Famiglia INPADOC",
-        "STANDARD": "Standard",
-        "COUNTRY": "Paese"
-      }
-    },
-    "ETSI": {
-      "SUBTITLE": "Tecnologie ETSI",
-      "DETAILS": "Dettaglio Tecnologia ETSI",
-      "FIELDS": {
-        "NAME": "Nome",
-        "DESCRIPTION": "Descrizione",
-        "COMMITTEE": "Commissioni",
-        "CONTRIBUTING_COMPANY": "Aziende contribuenti",
-        "NOT_CONTRIBUTING_COMPANY": "Aziende non contribuenti",
-        "DELEGATES_COMPANY": "Aziende delegate",
-        "PARTICIPATING_COMPANY": "Aziende partecipanti",
-        "TECHNICAL_SPECIFICATION": "Specifiche tecniche",
-        "CREDENTIALS": "Credenziali",
-        "RELATED_TECHNOLOGIES": "Related Technologies",
-        "COMMITTEE_DETAILS": "Committee Details"
-      },
-     "TECH_SPEC_TABLE": {
-        "TITLE": "Specification Title",
-        "PUBLICATION": "Publication",
-        "VERSION": "Specification Version",
-        "TECHNOLOGIES": "Technologies"
-      }
-    },
-    "ADD_DIALOG": {
-      "TECHNOLOGY": {
-        "TITLE": "Aggiungi tecnologia",
-        "FIELD": "Nome"
-      },
-      "STANDARD": {
-        "TITLE": "Aggiungi standard",
-        "FIELD": "Nome"
-      },
-      "INPADOC": {
-        "TITLE": "Aggiungi famiglia INPADOC",
-        "FIELD": "Nome"
-      },
-      "ETSI": {
-        "TITLE": "Aggiungi famiglia ETSI",
-        "FIELD": "Nome"
-      },
-      "PUB_NUM": {
-        "TITLE": "Aggiungi numero di pubblicazione",
-        "FIELD": "Numero"
-      },
-      "GEO_COV": {
-        "TITLE": "Aggiungi copertura geografica",
-        "FIELD": "Copertura"
-      }
-    }
-  },
   "AUTH": {
-    "TITLE": "Benvenuto in Argo",
+    "TITLE": "Benvenuto in InvestAI",
+    "NO_ACCOUNT": "Non hai un account?",
+    "REGISTER_HERE": "Registrati qui",
     "FORM": {
       "USERNAME": "Username",
       "PASSWORD": "Password",
@@ -186,22 +96,6 @@
   },
   "FILTERS": {
     "TITLE": "Filtra"
-  },
-  "DOCUMENTATION": {
-    "TITLE": "Documentation",
-    "USER_GUIDES": "User Guides",
-    "ARCHITECTURE": {
-      "TITLE": "Software Architecture",
-      "WEB_APP": "Web App",
-      "CORE_APP": "Core App"
-    },
-    "DATABASE": "Database",
-    "REST_API": "Rest API",
-    "CODE_DOCUMENTATION": {
-      "TITLE": "Code Documentation",
-      "WEB_APP": "Web App",
-      "CORE_APP": "Core App"
-    } 
   },
   "COLUMN": {
     "ACTION": "Azioni"

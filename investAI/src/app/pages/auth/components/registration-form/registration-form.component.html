@@ -1,0 +1,32 @@
+<div class="p-5">
+    <mat-card class="login-card container">
+      <h2>{{ 'AUTH.REGISTER_TITLE' | translate }}</h2>
+  
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'AUTH.FORM.USERNAME' | translate }}</mat-label>
+          <input matInput formControlName="username" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'AUTH.FORM.EMAIL' | translate }}</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'AUTH.FORM.PASSWORD' | translate }}</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>{{ 'AUTH.FORM.CONFIRM_PASSWORD' | translate }}</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" />
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" class="full-width">
+          {{ 'AUTH.REGISTER_BUTTON' | translate }}
+        </button>
+      </form>
+    </mat-card>
+  </div>
+  

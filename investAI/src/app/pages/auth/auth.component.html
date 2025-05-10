@@ -1,37 +1,43 @@
 <div class="p-5">
     <mat-card class="login-card container">
         <div>
-            <h2 class="login-title">{{'AUTH.TITLE' | translate}}</h2>
+            <h2 class="login-title">{{ 'AUTH.TITLE' | translate }}</h2>
         </div>
-        
+
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="fill" class="full-width">
-                <mat-label>{{'AUTH.FORM.USERNAME' | translate}}</mat-label>
-                <input matInput formControlName="username" type="text" />
-                @if(loginForm.get('username')?.hasError('username') && !loginForm.get('username')?.hasError('required')) {
-                    <mat-error>
-                        {{ 'AUTH.FORM.ERRORS.EMAIL'}}
-                    </mat-error>
+                <mat-label>{{ 'AUTH.FORM.USERNAME' | translate }}</mat-label>
+                <input matInput formControlName="username" type="text" autocomplete="username" />
+                @if (loginForm.get('username')?.hasError('username') &&
+                !loginForm.get('username')?.hasError('required')) {
+                <mat-error>{{ 'AUTH.FORM.ERRORS.EMAIL' }}</mat-error>
                 }
-                @else if(loginForm.get('username')?.hasError('required')) {
-                        <mat-error>
-                        {{ 'AUTH.FORM.ERRORS.REQUIRED' | translate}}
-                    </mat-error>
+                @else if (loginForm.get('username')?.hasError('required')) {
+                <mat-error>
+                    {{ 'AUTH.FORM.ERRORS.REQUIRED' | translate }}
+                </mat-error>
                 }
             </mat-form-field>
 
             <mat-form-field appearance="fill" class="full-width">
-                <mat-label>{{'AUTH.FORM.PASSWORD' | translate}}</mat-label>
-                <input matInput formControlName="password" type="password" />
-                @if(loginForm.get('password')?.hasError('required')) {
-                    <mat-error>
-                        {{ 'AUTH.FORM.ERRORS.REQUIRED' | translate}}
-                    </mat-error>
+                <mat-label>{{ 'AUTH.FORM.PASSWORD' | translate }}</mat-label>
+                <input matInput formControlName="password" type="password" autocomplete="current-password" />
+                @if (loginForm.get('password')?.hasError('required')) {
+                <mat-error>
+                    {{ 'AUTH.FORM.ERRORS.REQUIRED' | translate }}
+                </mat-error>
                 }
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit" class="full-width"> 
-                {{'AUTH.BUTTON' | translate}}
+            <div class="register-link text-center mt-2">
+                <span>{{ 'AUTH.NO_ACCOUNT' | translate }}</span>
+                <a routerLink="/register" class="ml-2">{{
+                    'AUTH.REGISTER_HERE' | translate
+                    }}</a>
+            </div>
+
+            <button mat-raised-button color="primary" type="submit" class="full-width mt-2">
+                {{ 'AUTH.BUTTON' | translate }}
             </button>
         </form>
     </mat-card>
